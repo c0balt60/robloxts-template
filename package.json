@@ -1,0 +1,43 @@
+{
+  "name": "flamework-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rbxts/compiler-types": "^3.0.0-types.0",
+    "@rbxts/types": "^1.0.813",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-roblox-ts": "^0.0.30",
+    "prettier": "^2.3.2",
+    "rbxts-transformer-flamework": "^1.2.3",
+    "roblox-ts": "^3.0.0",
+    "typescript": "~5.2.2"
+  },
+  "dependencies": {
+    "@flamework/components": "^1.2.3",
+    "@flamework/core": "^1.2.3",
+    "@flamework/networking": "^1.2.3",
+    "@rbxts/cmdr": "^1.12.1",
+    "@rbxts/make": "^1.0.6",
+    "@rbxts/object-utils": "^1.0.4",
+    "@rbxts/pretty-react-hooks": "^0.6.1",
+    "@rbxts/react": "^17.2.3",
+    "@rbxts/react-roblox": "^17.2.3",
+    "@rbxts/ripple": "^0.9.1",
+    "@rbxts/services": "^1.5.5",
+    "@rbxts/set-timeout": "^1.1.2",
+    "@rbxts/ui-labs": "^2.3.0",
+    "@rbxts/ui-scaler": "^0.2.1"
+  }
+}
