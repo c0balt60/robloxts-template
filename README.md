@@ -1,16 +1,15 @@
-# Flamework Template
+# Personal Roblox-ts template
 
-👋 Hey! This is a pre-configured template you can use for your projects that use [Flamework](https://fireboltofdeath.dev/docs/flamework/).
+This is my personal template for roblox typescript development
+This template is designed for *single place* game architecture
 
-## Usage
+# Stack
 
-First, create the folder on your computer where you want your project to be stored.
+This template uses some of the most popular tools to aid development
 
-Then, open a terminal at that directory and run the following commands:
-
-```console
-npx degit rbxts-flamework/template
-npm i
-```
-
-That's it! The template has been installed. For further information on how to use Flamework in your project, please see [here](https://fireboltofdeath.dev/docs/flamework).
+**Framework:** Flamework
+**UI:** React & UI labs, Ripple, Topbar+
+**Commands:** Cmdr
+**Networking:** Flamework networking
+**State Management:** Reflex
+**Datastores:** Lappis
