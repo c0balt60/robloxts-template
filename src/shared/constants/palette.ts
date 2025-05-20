@@ -7,18 +7,18 @@ import Object from "@rbxts/object-utils";
 export const accents = {
 	rosewater: Color3.fromRGB(245, 224, 220),
 	flamingo: Color3.fromRGB(242, 205, 205),
-	pink: Color3.fromRGB(245, 194, 231),
-	mauve: Color3.fromRGB(203, 166, 247),
-	red: Color3.fromRGB(243, 139, 168),
-	maroon: Color3.fromRGB(235, 160, 172),
-	peach: Color3.fromRGB(250, 179, 135),
-	yellow: Color3.fromRGB(249, 226, 175),
-	green: Color3.fromRGB(166, 227, 161),
-	teal: Color3.fromRGB(148, 226, 213),
-	sky: Color3.fromRGB(137, 220, 235),
 	sapphire: Color3.fromRGB(116, 199, 236),
-	blue: Color3.fromRGB(137, 180, 250),
 	lavender: Color3.fromRGB(180, 190, 254),
+	maroon: Color3.fromRGB(235, 160, 172),
+	yellow: Color3.fromRGB(249, 226, 175),
+	mauve: Color3.fromRGB(203, 166, 247),
+	peach: Color3.fromRGB(250, 179, 135),
+	green: Color3.fromRGB(166, 227, 161),
+	pink: Color3.fromRGB(245, 194, 231),
+	teal: Color3.fromRGB(148, 226, 213),
+	blue: Color3.fromRGB(137, 180, 250),
+	red: Color3.fromRGB(243, 139, 168),
+	sky: Color3.fromRGB(137, 220, 235),
 } as const;
 
 /**
@@ -26,7 +26,6 @@ export const accents = {
  * @see https://github.com/catppuccin/catppuccin
  */
 export const neutrals = {
-	text: Color3.fromRGB(205, 214, 244),
 	subtext1: Color3.fromRGB(186, 194, 222),
 	subtext0: Color3.fromRGB(166, 173, 200),
 	overlay2: Color3.fromRGB(147, 153, 178),
@@ -35,14 +34,15 @@ export const neutrals = {
 	surface2: Color3.fromRGB(88, 91, 112),
 	surface1: Color3.fromRGB(69, 71, 90),
 	surface0: Color3.fromRGB(49, 50, 68),
-	base: Color3.fromRGB(30, 30, 46),
+	text: Color3.fromRGB(205, 214, 244),
 	mantle: Color3.fromRGB(24, 24, 37),
 	crust: Color3.fromRGB(17, 17, 27),
+	base: Color3.fromRGB(30, 30, 46),
 } as const;
 
 const base = {
-	white: Color3.fromRGB(255, 255, 255),
 	offwhite: Color3.fromRGB(234, 238, 253),
+	white: Color3.fromRGB(255, 255, 255),
 	black: Color3.fromRGB(0, 0, 0),
 };
 

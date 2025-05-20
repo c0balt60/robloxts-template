@@ -1,41 +1,41 @@
-import { getBindingValue, useEventListener, useUnmountEffect } from "@rbxts/pretty-react-hooks";
-import React, { Binding, useMemo, useState } from "@rbxts/react";
+import { useEventListener, useUnmountEffect, getBindingValue } from "@rbxts/pretty-react-hooks";
+import React, { useState, Binding, useMemo } from "@rbxts/react";
 import { createPortal } from "@rbxts/react-roblox";
-import { RunService } from "@rbxts/services";
 import { palette } from "shared/constants/palette";
+import { RunService } from "@rbxts/services";
 
 interface TransitionProps extends React.PropsWithChildren {
-	groupColor?: Color3 | Binding<Color3>;
-	groupTransparency?: number | Binding<number>;
-	anchorPoint?: Vector2 | Binding<Vector2>;
-	size?: UDim2 | Binding<UDim2>;
-	position?: UDim2 | Binding<UDim2>;
-	rotation?: number | Binding<number>;
-	clipsDescendants?: boolean | Binding<boolean>;
-	layoutOrder?: number | Binding<number>;
-	zIndex?: number | Binding<number>;
-	event?: React.InstanceEvent<Frame | CanvasGroup>;
-	change?: React.InstanceChangeEvent<Frame | CanvasGroup>;
+	change?: React.InstanceChangeEvent<CanvasGroup | Frame>;
+	event?: React.InstanceEvent<CanvasGroup | Frame>;
+	clipsDescendants?: Binding<boolean> | boolean;
+	groupTransparency?: Binding<number> | number;
+	anchorPoint?: Binding<Vector2> | Vector2;
+	layoutOrder?: Binding<number> | number;
+	groupColor?: Binding<Color3> | Color3;
+	rotation?: Binding<number> | number;
+	position?: Binding<UDim2> | UDim2;
+	zIndex?: Binding<number> | number;
 	directChildren?: React.ReactNode;
+	size?: Binding<UDim2> | UDim2;
 	children?: React.ReactNode;
 }
 
 const EPSILON = 0.03;
 
 export function Transition({
-	groupColor,
-	groupTransparency,
-	anchorPoint,
 	size = new UDim2(1, 0, 1, 0),
+	groupTransparency,
+	clipsDescendants,
+	directChildren,
+	anchorPoint,
+	layoutOrder,
+	groupColor,
 	position,
 	rotation,
-	clipsDescendants,
-	layoutOrder,
-	zIndex,
-	event,
-	change,
 	children,
-	directChildren,
+	zIndex,
+	change,
+	event,
 }: TransitionProps) {
 	const [frame, setFrame] = useState<Frame>();
 	const [canvas, setCanvas] = useState<CanvasGroup>();
@@ -68,33 +68,33 @@ export function Transition({
 		<frame
 			BackgroundTransparency={1}
 			AnchorPoint={anchorPoint}
-			Size={size}
+			LayoutOrder={layoutOrder}
 			Position={position}
 			Rotation={rotation}
-			LayoutOrder={layoutOrder}
 			ZIndex={zIndex}
+			Size={size}
 		>
 			{createPortal(<>{children}</>, container)}
 
 			<canvasgroup
+				GroupTransparency={groupTransparency}
+				Size={new UDim2(1, 0, 1, 0)}
+				BackgroundTransparency={1}
+				GroupColor3={groupColor}
 				ref={setCanvas}
 				Change={change}
 				Event={event}
-				GroupTransparency={groupTransparency}
-				GroupColor3={groupColor}
-				BackgroundTransparency={1}
-				Size={new UDim2(1, 0, 1, 0)}
 			>
 				{directChildren}
 			</canvasgroup>
 
 			<frame
-				ref={setFrame}
-				Change={change}
-				Event={event}
 				ClipsDescendants={clipsDescendants}
-				BackgroundTransparency={1}
 				Size={new UDim2(1, 0, 1, 0)}
+				BackgroundTransparency={1}
+				Change={change}
+				ref={setFrame}
+				Event={event}
 			>
 				{directChildren}
 			</frame>

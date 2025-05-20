@@ -3,7 +3,7 @@ import { Networking } from "@flamework/networking";
 interface ClientToServerEvents {}
 
 interface ServerToClientEvents {
-    event(param1: string): void;
+	event(param1: string): void;
 }
 
 interface ClientToServerFunctions {}

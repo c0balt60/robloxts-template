@@ -1,11 +1,11 @@
-import { map, useCamera, useDebounceState, useEventListener } from "@rbxts/pretty-react-hooks";
+import { useDebounceState, useEventListener, useCamera, map } from "@rbxts/pretty-react-hooks";
 import React, { createContext, useEffect } from "@rbxts/react";
 
 export interface RemProviderProps extends React.PropsWithChildren {
-	baseRem?: number;
 	remOverride?: number;
 	minimumRem?: number;
 	maximumRem?: number;
+	baseRem?: number;
 }
 
 export const DEFAULT_REM = 16;
@@ -16,14 +16,14 @@ const MAX_ASPECT_RATIO = 19 / 9;
 export const RemContext = createContext<number>(DEFAULT_REM);
 
 export function RemProvider({
+	maximumRem = math.huge,
 	baseRem = DEFAULT_REM,
 	minimumRem = MIN_REM,
-	maximumRem = math.huge,
 	remOverride,
 	children,
 }: RemProviderProps) {
 	const camera = useCamera();
-	const [rem, setRem] = useDebounceState(baseRem, { wait: 0.2, leading: true });
+	const [rem, setRem] = useDebounceState(baseRem, { leading: true, wait: 0.2 });
 
 	const update = () => {
 		const viewport = camera.ViewportSize;

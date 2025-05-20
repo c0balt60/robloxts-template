@@ -1,7 +1,6 @@
-import React from "@rbxts/react";
 import Group from "client/ui/components/primitive/group";
-import UltraWideContainer from "client/ui/components/utils/ultra-wide-container";
 import { IS_EDIT } from "shared/constants/game";
+import React from "@rbxts/react";
 
 export interface LayerProps extends React.PropsWithChildren {
 	/**
@@ -40,14 +39,11 @@ export interface LayerProps extends React.PropsWithChildren {
  *
  * @see https://developer.roblox.com/en-us/api-reference/class/ScreenGui
  */
-export default function Layer({
-	displayOrder,
-	children,
-}: Readonly<LayerProps>): React.ReactNode {
+export default function Layer({ displayOrder, children }: Readonly<LayerProps>): React.ReactNode {
 	return IS_EDIT ? (
 		<Group>{children}</Group>
 	) : (
-		<screengui DisplayOrder={displayOrder} IgnoreGuiInset={true} ResetOnSpawn={false} ZIndexBehavior="Sibling">
+		<screengui DisplayOrder={displayOrder} ZIndexBehavior="Sibling" IgnoreGuiInset={true} ResetOnSpawn={false}>
 			{children}
 		</screengui>
 	);

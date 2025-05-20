@@ -1,4 +1,4 @@
-type ImmutablePrimitive = boolean | number | string | undefined;
+type ImmutablePrimitive = undefined | boolean | number | string;
 
 export type Immutable<T> = T extends ImmutablePrimitive
 	? T

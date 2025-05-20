@@ -3,11 +3,11 @@ import { setTimeout } from "@rbxts/set-timeout";
 
 interface DelayRenderProps extends React.PropsWithChildren {
 	shouldRender: boolean;
-	mountDelay?: number;
 	unmountDelay?: number;
+	mountDelay?: number;
 }
 
-export function DelayRender({ shouldRender, mountDelay = 0, unmountDelay = 0, children }: DelayRenderProps) {
+export function DelayRender({ unmountDelay = 0, mountDelay = 0, shouldRender, children }: DelayRenderProps) {
 	const [render, setRender] = useState(false);
 
 	useEffect(() => {
