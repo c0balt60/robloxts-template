@@ -11,5 +11,5 @@ This template uses some of the most popular tools to aid development
 **UI:** React & UI labs, Ripple, Topbar+  <br>
 **Commands:** Cmdr  <br>
 **Networking:** Flamework networking  <br>
-**State Management:** Reflex  <br>
+**State Management:** Charm  <br>
 **Datastores:** Lappis  <br>
