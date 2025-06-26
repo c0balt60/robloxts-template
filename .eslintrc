@@ -193,6 +193,7 @@
 		"no-restricted-imports": [
 			"error",
 			{
+			  "allowSameFolder": true,
 			  "patterns": [
 				{
 				  "group": ["./", "../"],
@@ -200,6 +201,10 @@
 				}
 			  ]
 			}
+		],
+		"no-relative-import-paths/no-relative-import-paths": [
+			"error",
+			{ "allowSameFolder": true }
 		]
 	},
 	"overrides": [
